@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -28,7 +29,8 @@ import com.ccl.tiempodam.ViewModel.ConverterViewModel
 @Composable
 fun ConverterScreen(
     // SI YA EXISTE LO RECUPERA Y NO LO CREA
-    viewModel: ConverterViewModel = viewModel()
+    viewModel: ConverterViewModel = viewModel(),
+    onButtonClick: () -> Unit
 ){
     // Observar las variables del viewModel
     val input by viewModel.celsiusInput.collectAsState()
@@ -65,6 +67,12 @@ fun ConverterScreen(
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
+            Spacer(modifier = Modifier.height(20.dp))
+            Button(
+                onClick = onButtonClick
+            ) {
+                Text(text = "Ir a otra ventana")
+            }
         }
     }
 }
