@@ -1,5 +1,6 @@
 package com.ccl.tiempodam
 
+import android.annotation.SuppressLint
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
@@ -21,6 +22,8 @@ data class ClimaDetailDestination(
     val ciudad: String,
     val temperatura: Double
 )
+
+@SuppressLint("RestrictedApi")
 
 @Composable
 fun AppNavigation(){
